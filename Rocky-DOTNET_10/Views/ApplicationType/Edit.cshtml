@@ -7,14 +7,13 @@
             <div class="card shadow-sm border-info">
                 <div class="card-header bg-info text-white">
                     <h3 class="mb-0">
-                        <i class="bi bi-plus-circle me-2"></i> Add Application Type
+                        <i class="bi bi-pencil-square me-2"></i> Edit Application Type
                     </h3>
                 </div>
 
                 <div class="card-body">
-                    <form asp-action="Create" method="post">
-                        @* Hidden validation summary (optional) *@
-                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+                    <form asp-action="Edit" method="post">
+                        <input asp-for="Id" type="hidden" />
 
                         <!-- Category Name -->
                         <div class="mb-3 row">
@@ -29,11 +28,12 @@
                         <div class="row mt-4">
                             <div class="col-sm-8 offset-sm-4 d-flex gap-3">
                                 <button type="submit" class="btn btn-info w-50">
-                                    <i class="bi bi-check-lg me-1"></i> Create
+                                    <i class="bi bi-check-lg me-1"></i> Update
                                 </button>
 
                                 <a asp-action="Index" class="btn btn-secondary w-50">
-                                    <i class="fa-solid fa-right-from-bracket"></i> Back
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    Back
                                 </a>
                             </div>
                         </div>

@@ -4,37 +4,38 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <div class="card shadow-sm border-info">
-                <div class="card-header bg-info text-white">
+            <div class="card shadow-sm border-danger">
+                <div class="card-header bg-danger text-white">
                     <h3 class="mb-0">
-                        <i class="bi bi-plus-circle me-2"></i> Add Application Type
+                        <i class="bi bi-trash3-fill me-2"></i> Delete Application Type
                     </h3>
                 </div>
 
                 <div class="card-body">
-                    <form asp-action="Create" method="post">
-                        @* Hidden validation summary (optional) *@
-                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+                    <form asp-action="DeletePost" method="post">
+                        <input asp-for="Id" type="hidden" />
 
                         <!-- Category Name -->
                         <div class="mb-3 row">
                             <label asp-for="Name" class="col-sm-4 col-form-label fw-bold"></label>
                             <div class="col-sm-8">
-                                <input asp-for="Name" class="form-control" />
-                                <span asp-validation-for="Name" class="text-danger"></span>
+                                <input asp-for="Name" class="form-control" disabled />
                             </div>
                         </div>
 
                         <!-- Action Buttons -->
                         <div class="row mt-4">
                             <div class="col-sm-8 offset-sm-4 d-flex gap-3">
-                                <button type="submit" class="btn btn-info w-50">
-                                    <i class="bi bi-check-lg me-1"></i> Create
+
+                                <button type="submit" class="btn btn-danger w-50">
+                                    <i class="fa-solid fa-trash-can"></i> Delete
                                 </button>
 
                                 <a asp-action="Index" class="btn btn-secondary w-50">
-                                    <i class="fa-solid fa-right-from-bracket"></i> Back
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    Back
                                 </a>
+
                             </div>
                         </div>
 
