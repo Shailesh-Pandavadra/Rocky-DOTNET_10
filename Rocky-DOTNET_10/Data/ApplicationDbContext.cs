@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Rocky_DOTNET_10.Models;
 
 namespace Rocky_DOTNET_10.Data
 {
@@ -8,5 +9,6 @@ namespace Rocky_DOTNET_10.Data
         {
 
         }
+        public DbSet<Category> Category { get; set; }
     }
 }
