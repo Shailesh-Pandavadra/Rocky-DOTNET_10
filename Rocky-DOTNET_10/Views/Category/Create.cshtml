@@ -2,7 +2,8 @@
 
 <form method="post" asp-action="Create">
     <div class="border p-4 mt-4">
-
+        @* <div asp-validation-summary="All" class="text-danger"></div> *@
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <h2 class="text-info mb-4">Add Category</h2>
 
         <div class="row mb-3">
@@ -42,7 +43,3 @@
 
     </div>
 </form>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
