@@ -1,49 +1,58 @@
 ﻿@model Rocky_DOTNET_10.Models.Category
 
-<form method="post" asp-action="DeletePost">
-    <input asp-for="Id" hidden />
-    <div class="border p-4 mt-4">
-        <h2 class="text-info mb-4">Delete Category</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
-        <div class="row mb-3">
-            <div class="col-4">
-                <label asp-for="Name" class="form-label"></label>
-            </div>
-            <div class="col-8">
-                <input asp-for="Name" disabled class="form-control" />
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-4">
-                <label asp-for="DisplayOrder" class="form-label"></label>
-            </div>
-            <div class="col-8">
-                <input asp-for="DisplayOrder" disabled class="form-control" />
-            </div>
-        </div>
-
-        <!-- Action buttons -->
-        <div class="row mt-4">
-            <div class="col-8 offset-4 d-flex gap-3">
-
-                <div class="col">
-                    <button type="submit" class="btn btn-danger w-50">
-                        Delete
-                    </button>
-                </div>
-                <div class="col">
+            <div class="card shadow-sm border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="mb-0">
+                        <i class="bi bi-trash3-fill me-2"></i> Delete Category
+                    </h3>
                 </div>
 
-                <a asp-action="Index" class="btn btn-secondary w-50">
-                    Back
-                </a>
+                <div class="card-body">
+                    <form asp-action="DeletePost" method="post">
+                        <input asp-for="Id" type="hidden" />
 
+                        <!-- Category Name -->
+                        <div class="mb-3 row">
+                            <label asp-for="Name" class="col-sm-4 col-form-label fw-bold"></label>
+                            <div class="col-sm-8">
+                                <input asp-for="Name" class="form-control" disabled />
+                            </div>
+                        </div>
+
+                        <!-- Display Order -->
+                        <div class="mb-3 row">
+                            <label asp-for="DisplayOrder" class="col-sm-4 col-form-label fw-bold"></label>
+                            <div class="col-sm-8">
+                                <input asp-for="DisplayOrder" class="form-control" disabled />
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="row mt-4">
+                            <div class="col-sm-8 offset-sm-4 d-flex gap-3">
+
+                                <button type="submit" class="btn btn-danger w-50">
+                                    <i class="bi bi-check2-circle me-1"></i> Delete
+                                </button>
+
+                                <a asp-action="Index" class="btn btn-secondary w-50">
+                                    <i class="bi bi-arrow-left me-1"></i> Back
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</form>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

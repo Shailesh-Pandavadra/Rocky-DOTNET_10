@@ -1,47 +1,59 @@
 ﻿@model Rocky_DOTNET_10.Models.Category
 
-<form method="post" asp-action="Create">
-    <div class="border p-4 mt-4">
-        @* <div asp-validation-summary="All" class="text-danger"></div> *@
-        <h2 class="text-info mb-4">Add Category</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
-        <div class="row mb-3">
-            <div class="col-4">
-                <label asp-for="Name" class="form-label"></label>
+            <div class="card shadow-sm border-info">
+                <div class="card-header bg-info text-white">
+                    <h3 class="mb-0">
+                        <i class="bi bi-plus-circle me-2"></i> Add Category
+                    </h3>
+                </div>
+
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        @* Hidden validation summary (optional) *@
+                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                        <!-- Category Name -->
+                        <div class="mb-3 row">
+                            <label asp-for="Name" class="col-sm-4 col-form-label fw-bold"></label>
+                            <div class="col-sm-8">
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!-- Display Order -->
+                        <div class="mb-3 row">
+                            <label asp-for="DisplayOrder" class="col-sm-4 col-form-label fw-bold"></label>
+                            <div class="col-sm-8">
+                                <input asp-for="DisplayOrder" class="form-control" />
+                                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="row mt-4">
+                            <div class="col-sm-8 offset-sm-4 d-flex gap-3">
+                                <button type="submit" class="btn btn-info w-50">
+                                    <i class="bi bi-check-lg me-1"></i> Create
+                                </button>
+
+                                <a asp-action="Index" class="btn btn-secondary w-50">
+                                    <i class="bi bi-arrow-left me-1"></i> Back
+                                </a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
             </div>
-            <div class="col-8">
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+
         </div>
-
-        <div class="row mb-3">
-            <div class="col-4">
-                <label asp-for="DisplayOrder" class="form-label"></label>
-            </div>
-            <div class="col-8">
-                <input asp-for="DisplayOrder" class="form-control" />
-                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
-            </div>
-        </div>
-
-        <!-- Action buttons -->
-        <div class="row mt-4">
-            <div class="col-8 offset-4 d-flex gap-3">
-
-                <button type="submit" class="btn btn-info w-50">
-                    Create
-                </button>
-
-                <a asp-action="Index" class="btn btn-secondary w-50">
-                    Back
-                </a>
-
-            </div>
-        </div>
-
     </div>
-</form>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
