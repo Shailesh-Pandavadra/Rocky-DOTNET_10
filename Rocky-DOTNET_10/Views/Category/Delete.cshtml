@@ -1,0 +1,50 @@
+﻿@model Rocky_DOTNET_10.Models.Category
+
+<form method="post" asp-action="DeletePost">
+    <input asp-for="Id" hidden />
+    <div class="border p-4 mt-4">
+        <h2 class="text-info mb-4">Delete Category</h2>
+
+        <div class="row mb-3">
+            <div class="col-4">
+                <label asp-for="Name" class="form-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Name" disabled class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-4">
+                <label asp-for="DisplayOrder" class="form-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DisplayOrder" disabled class="form-control" />
+            </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="row mt-4">
+            <div class="col-8 offset-4 d-flex gap-3">
+
+                <div class="col">
+                    <button type="submit" class="btn btn-danger w-50">
+                        Delete
+                    </button>
+                </div>
+                <div class="col">
+                </div>
+
+                <a asp-action="Index" class="btn btn-secondary w-50">
+                    Back
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
